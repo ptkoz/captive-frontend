@@ -58,10 +58,10 @@ class Root extends React.PureComponent<IRootProps & RouteComponentProps & WithTr
 							<LinkContainer to="/" exact={true}>
 								<NavItem eventKey={1}>{this.props.t("Log in")}</NavItem>
 							</LinkContainer>
-							<LinkContainer to="/motivation">
+							<LinkContainer to="/motivation.html">
 								<NavItem eventKey={2}>{this.props.t("Why token instead of password")}</NavItem>
 							</LinkContainer>
-							<LinkContainer to="/geekness">
+							<LinkContainer to="/geekness.html">
 								<NavItem eventKey={3}>{this.props.t("That you also wanted to know")}</NavItem>
 							</LinkContainer>
 						</Nav>
