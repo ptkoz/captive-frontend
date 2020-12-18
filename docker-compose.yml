@@ -1,0 +1,8 @@
+version: '3'
+services:
+  www:
+    build: build
+    ports:
+      - "80:80"
+    volumes:
+      - ./public_html:/var/www/localhost/htdocs
