@@ -17,7 +17,7 @@ Then you need to find out Captive Portal API URL. If you followed Lua Captive Po
 assuming yours router IP is `192.168.1.1`. Build the frontend package like this:
 
 ```bash
-TOKEN_API="http://192.168.1.1:6820" yarn build 
+TOKEN_API="http://192.168.1.1:6820/captive.lua/auth.token" yarn build 
 ```
 
 Once build finished, you have the frontend ready in the `public_html` directory.
