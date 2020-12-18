@@ -5,7 +5,7 @@ module.exports = {
 	mode: "development",
 	entry: "src/index.tsx",
 	output: {
-		path: __dirname + '/../public_html/js',
+		path: __dirname + '/public_html/js',
 		filename: 'index.js'
 	},
 	module: {
@@ -28,6 +28,14 @@ module.exports = {
 		modules: ['node_modules', __dirname]
 	},
 	devtool: "cheap-eval-source-map",
+	plugins: [
+		new webpack.DefinePlugin({
+			"process.env": {
+				NODE_ENV: JSON.stringify("development"),
+				TOKEN_API: JSON.stringify(process.env.TOKEN_API || "/"),
+			}
+		}),
+	],
 	performance: {
 		hints: false
 	},

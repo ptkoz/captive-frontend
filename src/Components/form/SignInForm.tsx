@@ -36,10 +36,10 @@ class SignInForm extends React.PureComponent<ISignInFormProps, {}> {
 /**
  * Map onSubmit to action dispatcher
  */
-const mapDispatchToProps = (dispatch, { history }): ISignInFormProps => ({
+const mapDispatchToProps = (dispatch): ISignInFormProps => ({
 	onSubmit: (event: React.FormEvent<Form>): void => {
 		event.preventDefault();
-		dispatch(new SubmitForm(history));
+		dispatch(new SubmitForm());
 	}
 });
 

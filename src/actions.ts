@@ -33,16 +33,12 @@ export class ReceiveSubmitForm implements IPlainAction {
 }
 
 export class SubmitForm implements IThunkAction {
-	public constructor(private history: MemoryHistory) {
-
-	}
-
 	public dispatcher(dispatch: IDispatch, getState: () => IState) {
 		dispatch(new RequestSubmitForm());
 
 		setTimeout(
 			() => dispatch(new ReceiveSubmitForm(
-				xhr.postJSON("/cgi-bin/captive.lua/auth/token", { token: getState().token }).then(
+				xhr.postJSON(process.env.TOKEN_API || "", { token: getState().token }).then(
 					response => {
 						// Redirect to success page. Full reload is required
 						// in order to inform captive portal about successful
