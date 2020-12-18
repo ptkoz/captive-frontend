@@ -2,7 +2,7 @@
 import { IPlainAction, IThunkAction, TypeOnPrototype, IDispatch } from "./Tools/fsa";
 import { IState } from "./state";
 import { xhr } from "./Tools/xhr";
-import { MemoryHistory } from "history";
+import i18next from "i18next";
 
 /**
  * Updates current filtering form state
@@ -38,7 +38,11 @@ export class SubmitForm implements IThunkAction {
 
 		setTimeout(
 			() => dispatch(new ReceiveSubmitForm(
-				xhr.postJSON(process.env.TOKEN_API || "", { token: getState().token }).then(
+				xhr.postJSON(
+					process.env.TOKEN_API || "",
+					{ token: getState().token },
+					{"Accept-Language": i18next.language }
+				).then(
 					response => {
 						// Redirect to success page. Full reload is required
 						// in order to inform captive portal about successful
