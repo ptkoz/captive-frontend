@@ -3,7 +3,7 @@ import { render } from "react-dom";
 
 import { createStore, applyMiddleware, compose, Store } from "redux";
 import { Provider as ReduxProvider } from "react-redux";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 
 import "./i18n";
 import { Root } from "./Components/Root";
